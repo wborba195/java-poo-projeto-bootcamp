@@ -43,6 +43,8 @@ public class Main {
         System.out.println("Conteúdos Inscritos Camila:" + devCamila.getConteudosInscritos());
         System.out.println("Conteúdos Concluídos Camila:" + devCamila.getConteudosConcluidos());
         System.out.println("XP:" + devCamila.calcularTotalXp());
+        devCamila.perderVida();
+        System.out.println(devCamila.getVida());
 
         System.out.println("-------");
 

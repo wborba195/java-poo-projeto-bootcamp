@@ -6,6 +6,12 @@ public class Dev {
     private String nome;
     private Set<Conteudo> conteudosInscritos = new LinkedHashSet<>();
     private Set<Conteudo> conteudosConcluidos = new LinkedHashSet<>();
+    private int vida;
+
+    
+    public Dev() {
+        this.vida = 5;
+    }
 
     public void inscreverBootcamp(Bootcamp bootcamp){
         this.conteudosInscritos.addAll(bootcamp.getConteudos());
@@ -20,6 +26,10 @@ public class Dev {
         } else {
             System.err.println("Você não está matriculado em nenhum conteúdo!");
         }
+    }
+
+    public void perderVida(){
+        this.vida -= 1;
     }
 
     public double calcularTotalXp() {
@@ -73,5 +83,9 @@ public class Dev {
     @Override
     public int hashCode() {
         return Objects.hash(nome, conteudosInscritos, conteudosConcluidos);
+    }
+
+    public int getVida() {
+        return vida;
     }
 }
